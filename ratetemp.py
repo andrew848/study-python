@@ -1,17 +1,17 @@
 def rateTemp(temp):
-    if temp < 0:
+    if temp <= 0:
         return 'Extremely Cold'
-    elif 0 < temp < 20:
+    elif temp <= 20:
         return 'Very cold'
-    elif 20 < temp < 40:
+    elif temp <= 40:
         return 'Cold'
-    elif 40 < temp < 60:
+    elif temp <= 60:
         return 'Cool'
-    elif 60 < temp < 80:
+    elif temp <= 80:
         return 'Warm'
-    elif 80 < temp < 100:
+    elif temp <= 100:
         return 'Hot'
-    elif 100 < temp < 120:
+    elif temp <= 120:
         return 'Very hot'
     else:
         return 'Extremely hot'
