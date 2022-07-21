@@ -1,0 +1,2 @@
+def SmallOdd(numlist):
+    if
