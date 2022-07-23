@@ -1,13 +1,14 @@
 def convertTemp(temp):
-    for x in temp:
-        if 'f' in temp:
-            new = temp.strip('f')
-            c = (int(new) - 32) * 5 / 9
-            return c, "C"
-        elif 'c' in temp:
-            new = temp.strip('c')
-            f = (int(new) * 9 / 5 + 32)
-            return f, "C"
+    if temp.endswith('f'):
+        new = temp.strip('f')
+        c = (int(new) - 32) * 5 / 9
+        msg = ('The converted temperature is', c, 'C')
+        return msg
+    elif temp.endswith('c'):
+        new = temp.strip('c')
+        f = (int(new) * 9 / 5 + 32)
+        msg2 = ('The converted temperature is', f, 'F')
+        return msg2
 
 
 print(convertTemp('30c'))
