@@ -1,17 +1,20 @@
 def convertTemp(temp):
-    if temp.endswith('f'):
-        new = temp.strip('f')
-        c = (int(new) - 32) * 5 / 9
-        msg = ('The converted temperature is', c, 'C')
-        return msg
-    elif temp.endswith('c'):
-        new = temp.strip('c')
-        f = (int(new) * 9 / 5 + 32)
-        msg2 = ('The converted temperature is', f, 'F')
-        return msg2
+    a = temp.lower()
+    if a.endswith('f'):
+        new = a.strip('f')
+        c = (float(new) - 32) * 5 / 9
+        return c, 'C'
+    elif a.endswith('c'):
+        new = a.strip('c')
+        f = (float(new) * 9 / 5 + 32)
+        return f, 'F'
 
 
-print(convertTemp('30c'))
-print(convertTemp('310983c'))
-print(convertTemp('100f'))
-print(convertTemp('31983012f'))
+values = ('10f', '20c', '30F', '40C', '0f', '0C', '-10f', '-20C', '104f', '98f', '100.4f')
+for v in values:
+    converted = convertTemp(v)
+    print(f'Converted {v} -> {converted}')
+
+# print('The original temperature is 310f, The converted temperature is', convertTemp('310f'))
+# print('The original temperature is 1f, The converted temperature is', convertTemp('1c'))
+# print('The original temperature is -100f, The converted temperature is', convertTemp('-100f'))
