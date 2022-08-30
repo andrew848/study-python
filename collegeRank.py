@@ -30,8 +30,11 @@ colleges = {'princeton': 1,
             'usc': 26,
             'nyu': 27,
             'tufts': 28,
-            'uc santa barbara': 29,
-            'ufl': 30}
+            'uc santa barbara': 28,
+            'unc': 28,
+            'wfu': 28,
+            'ucsd': 29,
+            'ur': 30,}
 
 
 def rankCollege(college):
@@ -39,9 +42,11 @@ def rankCollege(college):
     if college not in colleges:
         msg = college + ' is out of range'
     else:
-        msg = college + ' is ranked ' + str(colleges[lower]) + 'among all US colleges'
+        msg = college + ' is ranked ' + str(colleges[lower]) + ' among all US colleges'
     return msg
-
+if (args.college.lower()) == 'all':
+    for i in colleges:
+        print(rankCollege(i))
 
 print(rankCollege(args.college))
 
