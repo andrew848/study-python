@@ -39,7 +39,7 @@ def rankCollege(college):
     if college not in colleges:
         msg = college + ' is out of range'
     else:
-        msg = college + ' is ranked ' + str(colleges[lower])
+        msg = college + ' is ranked ' + str(colleges[lower]) + 'among all US colleges'
     return msg
 
 
