@@ -1,3 +1,8 @@
+import argparse
+
+parser = argparse.ArgumentParser(description='Rank a college')
+parser.add_argument('college',type=str)
+args = parser.parse_args()
 colleges = {'princeton': 1,
             'harvard': 2,
             'mit': 3,
@@ -37,4 +42,7 @@ def rankCollege(college):
         msg = college + ' is ranked ' + str(colleges[lower])
     return msg
 
-print(rankCollege(input('Enter a college here: ')))
+
+print(rankCollege(args.college))
+
+
