@@ -1,9 +1,10 @@
 import argparse
 
 parser = argparse.ArgumentParser(description='Rank a college')
-parser.add_argument('college',type=str)
+parser.add_argument('college', type=str)
 args = parser.parse_args()
-colleges = {'princeton': 1,
+colleges = {
+            'princeton': 1,
             'harvard': 2,
             'mit': 3,
             'yale': 4,
@@ -34,20 +35,26 @@ colleges = {'princeton': 1,
             'unc': 28,
             'wfu': 28,
             'ucsd': 29,
-            'ur': 30,}
+            'ur': 30,
+}
 
 
 def rankCollege(college):
     lower = college.lower()
+    # if college.lower() == 'all':
+    #     for i in colleges:
+    #         print(rankCollege(i))
     if college not in colleges:
         msg = college + ' is out of range'
     else:
         msg = college + ' is ranked ' + str(colleges[lower]) + ' among all US colleges'
     return msg
-if (args.college.lower()) == 'all':
+
+
+if args.college.lower() == 'all':
     for i in colleges:
         print(rankCollege(i))
-
-print(rankCollege(args.college))
+else:
+    print(rankCollege(args.college))
 
 
