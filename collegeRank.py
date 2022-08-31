@@ -68,3 +68,6 @@ def rankCollegeRecursively(college, msg):
 if args.college.lower() == 'all':
     for i in colleges:
         print(rankCollege(i))
+else:
+    print(rankCollege(args.college))
+# print(rankCollegeRecursively(args.college, ''))
