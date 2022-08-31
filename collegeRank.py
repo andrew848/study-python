@@ -47,6 +47,20 @@ def rankCollege(college):
     if college not in colleges:
         msg = college + ' is out of range'
     else:
+        msg = college.upper() + ' is ranked ' + str(colleges[lower]) + ' among all US colleges'
+    return msg
+
+
+def rankCollegeRecursively(college, msg):
+    lower = college.lower()
+    if lower not in colleges:
+        if lower == 'all':
+            for i in colleges:
+                msg = msg + rankCollegeRecursively(i, msg) + '\n'
+            return msg
+        else:
+            msg = college + ' is out of range'
+    else:
         msg = college + ' is ranked ' + str(colleges[lower]) + ' among all US colleges'
     return msg
 
@@ -54,7 +68,3 @@ def rankCollege(college):
 if args.college.lower() == 'all':
     for i in colleges:
         print(rankCollege(i))
-else:
-    print(rankCollege(args.college))
-
-
